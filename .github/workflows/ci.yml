@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  kit:
+    name: QA · BourbonKit unit tests
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Toolchain
+        run: |
+          xcodebuild -version
+          swift --version
+      - name: Build
+        run: swift build --package-path BourbonKit
+      - name: Test
+        run: swift test --package-path BourbonKit --enable-code-coverage
+      - name: Coverage report
+        continue-on-error: true
+        run: |
+          PROFILE=$(dirname "$(swift test --package-path BourbonKit --show-codecov-path)")/default.profdata
+          BIN=$(swift build --package-path BourbonKit --show-bin-path)/BourbonKitPackageTests.xctest/Contents/MacOS/BourbonKitPackageTests
+          xcrun llvm-cov report "$BIN" -instr-profile "$PROFILE" -ignore-filename-regex '(Tests|\.build)/' | tee coverage.txt
+          echo '### BourbonKit coverage' >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          tail -n 25 coverage.txt >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+
