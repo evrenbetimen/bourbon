@@ -14,8 +14,7 @@ final class BourbonUITests: XCTestCase {
     override func setUpWithError() throws {
         continueAfterFailure = false
         app = XCUIApplication()
-        app.launchArguments = ["-UITestMode", "-AppleLanguages", "(en)", "-AppleLocale", "en_US",
-                               "-ApplePersistenceIgnoreState", "YES"]
+        app.launchArguments = ["-UITestMode", "-AppleLanguages", "(en)", "-ApplePersistenceIgnoreState", "YES"]
     }
 
     override func tearDownWithError() throws {
@@ -28,6 +27,7 @@ final class BourbonUITests: XCTestCase {
 
     private func launch() {
         app.launch()
+        app.activate()
         // SwiftUI's window isn't always exposed through `app.windows` on macOS, so the seeded
         // sidebar row is what proves the main window opened and the bottles loaded.
         let loaded = element("bottleRow-Steam").waitForExistence(timeout: 15)
