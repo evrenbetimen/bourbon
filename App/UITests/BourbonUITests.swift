@@ -14,7 +14,9 @@ final class BourbonUITests: XCTestCase {
     override func setUpWithError() throws {
         continueAfterFailure = false
         app = XCUIApplication()
-        app.launchArguments = ["-UITestMode", "-AppleLanguages", "(en)", "-ApplePersistenceIgnoreState", "YES"]
+        // Key-value defaults first: a bare flag in front of them would swallow the next key as its value,
+        // which silently dropped -ApplePersistenceIgnoreState and restored a session with no windows.
+        app.launchArguments = ["-AppleLanguages", "(en)", "-ApplePersistenceIgnoreState", "YES", "-UITestMode"]
     }
 
     override func tearDownWithError() throws {
@@ -118,8 +120,8 @@ final class OnboardingUITests: XCTestCase {
     func testOnboardingFlowDownloadsWine() {
         continueAfterFailure = false
         let app = XCUIApplication()
-        app.launchArguments = ["-UITestMode", "-UITestOnboarding", "-AppleLanguages", "(en)",
-                               "-ApplePersistenceIgnoreState", "YES"]
+        app.launchArguments = ["-AppleLanguages", "(en)", "-ApplePersistenceIgnoreState", "YES",
+                               "-UITestMode", "-UITestOnboarding"]
         app.launch()
         defer { app.terminate() }
 
