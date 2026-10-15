@@ -28,8 +28,10 @@ final class BourbonUITests: XCTestCase {
 
     private func launch() {
         app.launch()
-        XCTAssertTrue(app.windows.firstMatch.waitForExistence(timeout: 10), "The main window should open")
-        XCTAssertTrue(element("bottleRow-Steam").waitForExistence(timeout: 10), "Seeded bottles should load")
+        // SwiftUI's window isn't always exposed through `app.windows` on macOS, so the seeded
+        // sidebar row is what proves the main window opened and the bottles loaded.
+        XCTAssertTrue(element("bottleRow-Steam").waitForExistence(timeout: 15),
+                      "The main window should open with the seeded bottles")
     }
 
     func testSidebarListsSeededBottles() {
