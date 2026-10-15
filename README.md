@@ -35,6 +35,12 @@ yeniden yazılmıştır. Whisky gibi Bourbon da **GNU GPL v3** lisanslıdır.
 - **2027 arayüzü**: macOS 26'da sistemin Liquid Glass malzemesi, daha eski sürümlerde aynı
   hiyerarşiyi koruyan buzlu cam görünümü; Türkçe ve İngilizce yerelleştirme.
 
+## İndirme
+
+Hazır derlenmiş, ad-hoc imzalı sürümler [Releases](https://github.com/evrenbetimen/bourbon/releases) sayfasındadır. Uygulama noter onaylı olmadığı için ilk açılışta sağ tıklayıp **Aç**'ı seçin ya da `xattr -dr com.apple.quarantine /Applications/Bourbon.app` komutunu çalıştırın.
+
+Yeni sürüm yayınlamak için `project.yml` içindeki `MARKETING_VERSION` değerini güncelleyip `v1.2.3` biçiminde bir etiket gönderin ya da **Release** iş akışını elle çalıştırın. İş akışı evrensel bir `.app` derler, ad-hoc imzalar, açılışını dener ve `.dmg`, `.zip` ile `SHA256SUMS.txt` dosyalarını yayınlar.
+
 ## Gereksinimler
 
 - macOS 14 Sonoma veya üstü (Liquid Glass için macOS 26)
