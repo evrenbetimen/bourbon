@@ -7,3 +7,4 @@ DerivedData/
 xcuserdata/
 build.log
 coverage.txt
+__pycache__/
