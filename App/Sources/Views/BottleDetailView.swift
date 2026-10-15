@@ -97,7 +97,7 @@ struct BottleDetailView: View {
             }
         }
         .dropDestination(for: URL.self) { urls, _ in
-            let runnable = urls.filter { ["exe", "msi", "bat"].contains($0.pathExtension.lowercased()) }
+            let runnable = urls.filter(RunnableFile.isRunnable)
             runnable.forEach { model.run(fileAt: $0, in: bottle) }
             return !runnable.isEmpty
         } isTargeted: { isDropTargeted = $0 }

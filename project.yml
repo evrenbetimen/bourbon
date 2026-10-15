@@ -56,7 +56,31 @@ targets:
           - CFBundleTypeName: Windows Installer
             CFBundleTypeRole: Viewer
             LSHandlerRank: Alternate
-            CFBundleTypeExtensions: [msi, bat]
+            LSItemContentTypes: [com.microsoft.windows-installer]
+          - CFBundleTypeName: Windows Batch File
+            CFBundleTypeRole: Viewer
+            LSHandlerRank: Alternate
+            LSItemContentTypes: [com.microsoft.batch-file]
+        # Without these, a Mac where nothing else claims .exe/.msi/.bat files gives them dynamic
+        # types, and the open panel greys them out.
+        UTImportedTypeDeclarations:
+          - UTTypeIdentifier: com.microsoft.windows-executable
+            UTTypeDescription: Windows Program
+            UTTypeConformsTo: [public.data, public.executable]
+            UTTypeTagSpecification:
+              public.filename-extension: [exe, EXE]
+              public.mime-type: [application/x-msdownload, application/vnd.microsoft.portable-executable]
+          - UTTypeIdentifier: com.microsoft.windows-installer
+            UTTypeDescription: Windows Installer
+            UTTypeConformsTo: [public.data]
+            UTTypeTagSpecification:
+              public.filename-extension: [msi, MSI]
+              public.mime-type: [application/x-msi]
+          - UTTypeIdentifier: com.microsoft.batch-file
+            UTTypeDescription: Windows Batch File
+            UTTypeConformsTo: [public.plain-text]
+            UTTypeTagSpecification:
+              public.filename-extension: [bat, BAT]
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: dev.bourbon.app

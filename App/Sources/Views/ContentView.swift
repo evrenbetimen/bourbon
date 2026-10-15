@@ -54,11 +54,21 @@ struct ContentView: View {
         }
     }
 
-    static let runnableTypes: [UTType] = [
-        .exe,
-        UTType(filenameExtension: "msi") ?? .data,
-        UTType(filenameExtension: "bat") ?? .data
-    ]
+    /// Every type a Windows file can show up as. On a Mac with nothing else that opens `.exe` files the
+    /// system may give them a dynamic type instead of `com.microsoft.windows-executable`, which left them
+    /// greyed out in the picker, so each extension's own type is listed next to the declared ones.
+    static let runnableTypes: [UTType] = {
+        var types: [UTType] = [.exe]
+        for identifier in ["com.microsoft.windows-installer", "com.microsoft.batch-file"] {
+            if let declared = UTType(identifier) { types.append(declared) }
+        }
+        for ext in RunnableFile.extensions {
+            for type in [UTType(filenameExtension: ext), UTType(filenameExtension: ext.uppercased())] {
+                if let type, !types.contains(type) { types.append(type) }
+            }
+        }
+        return types
+    }()
 }
 
 /// Shown when there are no bottles yet.

@@ -340,7 +340,7 @@ final class AppModel {
     }
 
     func handleOpen(_ url: URL) {
-        guard url.isFileURL, ["exe", "msi", "bat"].contains(url.pathExtension.lowercased()) else { return }
+        guard RunnableFile.isRunnable(url) else { return }
         guard let bottle = selectedBottle ?? bottles.first else {
             showingNewBottle = true
             return
