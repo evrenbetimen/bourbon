@@ -14,8 +14,9 @@ final class BourbonUITests: XCTestCase {
     override func setUpWithError() throws {
         continueAfterFailure = false
         app = XCUIApplication()
-        app.launchArguments = ["-UITestMode", "-AppleLanguages", "(en)", "-AppleLocale", "en_US",
-                               "-ApplePersistenceIgnoreState", "YES"]
+        // Key-value defaults first: a bare flag in front of them would swallow the next key as its value,
+        // which silently dropped -ApplePersistenceIgnoreState and restored a session with no windows.
+        app.launchArguments = ["-AppleLanguages", "(en)", "-ApplePersistenceIgnoreState", "YES", "-UITestMode"]
     }
 
     override func tearDownWithError() throws {
@@ -28,10 +29,12 @@ final class BourbonUITests: XCTestCase {
 
     private func launch() {
         app.launch()
+        app.activate()
         // SwiftUI's window isn't always exposed through `app.windows` on macOS, so the seeded
         // sidebar row is what proves the main window opened and the bottles loaded.
-        XCTAssertTrue(element("bottleRow-Steam").waitForExistence(timeout: 15),
-                      "The main window should open with the seeded bottles")
+        let loaded = element("bottleRow-Steam").waitForExistence(timeout: 15)
+        // Include the accessibility tree so a CI failure shows what was on screen instead.
+        XCTAssertTrue(loaded, "The main window should open with the seeded bottles:\n\(app.debugDescription)")
     }
 
     func testSidebarListsSeededBottles() {
@@ -117,8 +120,8 @@ final class OnboardingUITests: XCTestCase {
     func testOnboardingFlowDownloadsWine() {
         continueAfterFailure = false
         let app = XCUIApplication()
-        app.launchArguments = ["-UITestMode", "-UITestOnboarding", "-AppleLanguages", "(en)",
-                               "-ApplePersistenceIgnoreState", "YES"]
+        app.launchArguments = ["-AppleLanguages", "(en)", "-ApplePersistenceIgnoreState", "YES",
+                               "-UITestMode", "-UITestOnboarding"]
         app.launch()
         defer { app.terminate() }
 
