@@ -1,0 +1,138 @@
+name: Release
+
+# Builds a universal, ad-hoc signed Bourbon.app and publishes it as a GitHub release.
+# A version tag (v1.2.3) publishes; a pull request that touches packaging only builds and
+# uploads the packages so they can be checked before merging.
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Release tag (defaults to v + MARKETING_VERSION from project.yml)
+        required: false
+  pull_request:
+    paths:
+      - .github/workflows/release.yml
+      - project.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  package:
+    name: Package · Bourbon.app
+    runs-on: macos-15
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v5
+      - name: Select newest stable Xcode
+        run: |
+          XCODE=$(ls -d /Applications/Xcode_*.app | grep -viE 'beta|rc' | sort -V | tail -1)
+          echo "Using $XCODE"
+          sudo xcode-select -s "$XCODE/Contents/Developer"
+          xcodebuild -version
+      - name: Resolve version
+        id: version
+        env:
+          INPUT_TAG: ${{ inputs.tag }}
+        run: |
+          MARKETING=$(sed -nE 's/^ *MARKETING_VERSION: *"?([^"]+)"?$/\1/p' project.yml | head -1)
+          if [ "$GITHUB_REF_TYPE" = "tag" ]; then
+            TAG="$GITHUB_REF_NAME"
+          elif [ -n "$INPUT_TAG" ]; then
+            TAG="$INPUT_TAG"
+          else
+            TAG="v$MARKETING"
+          fi
+          VERSION="${TAG#v}"
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "Packaging $TAG"
+      - name: Install XcodeGen
+        run: brew install xcodegen
+      - name: Generate project
+        run: xcodegen generate
+      - name: Build universal Release
+        run: |
+          set -o pipefail
+          xcodebuild build \
+            -project Bourbon.xcodeproj -scheme Bourbon \
+            -configuration Release \
+            -destination 'generic/platform=macOS' \
+            -derivedDataPath DerivedData \
+            ARCHS='arm64 x86_64' ONLY_ACTIVE_ARCH=NO \
+            MARKETING_VERSION='${{ steps.version.outputs.version }}' \
+            CURRENT_PROJECT_VERSION='${{ github.run_number }}' \
+            CODE_SIGN_IDENTITY=- | tee build.log | grep -E '(error:|BUILD SUCCEEDED|BUILD FAILED)' || true
+          grep -q 'BUILD SUCCEEDED' build.log
+      - name: Ad-hoc sign and verify
+        run: |
+          mkdir -p dist
+          ditto DerivedData/Build/Products/Release/Bourbon.app dist/Bourbon.app
+          codesign --force --deep --sign - --timestamp=none dist/Bourbon.app
+          codesign --verify --deep --strict --verbose=2 dist/Bourbon.app
+          codesign -dv dist/Bourbon.app 2>&1 | tee sign.txt
+          grep -q 'Signature=adhoc' sign.txt
+          lipo -archs dist/Bourbon.app/Contents/MacOS/Bourbon | tee archs.txt
+          grep -q arm64 archs.txt && grep -q x86_64 archs.txt
+          /usr/libexec/PlistBuddy -c 'Print CFBundleShortVersionString' dist/Bourbon.app/Contents/Info.plist
+      - name: Smoke test launch
+        run: |
+          dist/Bourbon.app/Contents/MacOS/Bourbon -ApplePersistenceIgnoreState YES &
+          PID=$!
+          sleep 10
+          kill -0 "$PID"
+          kill "$PID"
+      - name: Package zip and dmg
+        id: package
+        run: |
+          VERSION='${{ steps.version.outputs.version }}'
+          ZIP="Bourbon-$VERSION.zip"
+          DMG="Bourbon-$VERSION.dmg"
+          ditto -c -k --sequesterRsrc --keepParent dist/Bourbon.app "dist/$ZIP"
+          mkdir dmg
+          ditto dist/Bourbon.app dmg/Bourbon.app
+          ln -s /Applications dmg/Applications
+          hdiutil create -volname "Bourbon $VERSION" -srcfolder dmg -ov -format UDZO "dist/$DMG"
+          (cd dist && shasum -a 256 "$ZIP" "$DMG" > SHA256SUMS.txt && cat SHA256SUMS.txt)
+          echo "zip=dist/$ZIP" >> "$GITHUB_OUTPUT"
+          echo "dmg=dist/$DMG" >> "$GITHUB_OUTPUT"
+      - name: Upload packages
+        uses: actions/upload-artifact@v4
+        with:
+          name: Bourbon-${{ steps.version.outputs.version }}
+          path: |
+            ${{ steps.package.outputs.zip }}
+            ${{ steps.package.outputs.dmg }}
+            dist/SHA256SUMS.txt
+      - name: Publish GitHub release
+        if: github.event_name != 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ steps.version.outputs.tag }}
+        run: |
+          cat > notes.md <<'EOF'
+          Bourbon, Windows programlarını Wine ile macOS'ta çalıştıran uygulama. Evrensel (Apple çipli ve Intel) derleme, macOS 14 veya üstü gerekir.
+
+          ### Kurulum
+          1. `Bourbon-*.dmg` dosyasını açıp Bourbon'u Uygulamalar klasörüne sürükleyin.
+          2. Uygulama Apple tarafından noter onaylı değil, yalnızca ad-hoc imzalı. İlk açılışta Gatekeeper uyarı verirse uygulamaya sağ tıklayıp **Aç**'ı seçin ya da Terminal'de şunu çalıştırın:
+             ```sh
+             xattr -dr com.apple.quarantine /Applications/Bourbon.app
+             ```
+
+          `SHA256SUMS.txt` dosyasıyla indirdiğiniz dosyaları doğrulayabilirsiniz.
+
+          Bourbon, [Whisky](https://github.com/Whisky-App/Whisky) projesinden ilham alır ve GPL-3.0 lisansıyla dağıtılır.
+          EOF
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release upload "$TAG" ${{ steps.package.outputs.zip }} ${{ steps.package.outputs.dmg }} dist/SHA256SUMS.txt --clobber
+          else
+            gh release create "$TAG" ${{ steps.package.outputs.zip }} ${{ steps.package.outputs.dmg }} dist/SHA256SUMS.txt \
+              --target "$GITHUB_SHA" --title "Bourbon ${TAG#v}" --notes-file notes.md
+          fi
