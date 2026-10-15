@@ -11,11 +11,21 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  quality:
+    name: QC · Lint & localization
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Check localization catalog
+        run: python3 scripts/check_localization.py
+      - name: Check license headers and attribution
+        run: python3 scripts/check_repository.py
+
   kit:
     name: QA · BourbonKit unit tests
     runs-on: macos-15
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Toolchain
         run: |
           xcodebuild -version
@@ -35,3 +45,45 @@ jobs:
           tail -n 25 coverage.txt >> "$GITHUB_STEP_SUMMARY"
           echo '```' >> "$GITHUB_STEP_SUMMARY"
 
+  app:
+    name: QA · App build & UI tests
+    runs-on: macos-15
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v5
+      - name: Select newest stable Xcode
+        run: |
+          XCODE=$(ls -d /Applications/Xcode_*.app | grep -viE 'beta|rc' | sort -V | tail -1)
+          echo "Using $XCODE"
+          sudo xcode-select -s "$XCODE/Contents/Developer"
+          xcodebuild -version
+      - name: Install XcodeGen
+        run: brew install xcodegen
+      - name: Generate project
+        run: xcodegen generate
+      - name: Build for testing
+        run: |
+          set -o pipefail
+          xcodebuild build-for-testing \
+            -project Bourbon.xcodeproj -scheme Bourbon \
+            -destination 'platform=macOS' \
+            -derivedDataPath DerivedData \
+            CODE_SIGN_IDENTITY=- | tee build.log | grep -E '(error:|BUILD SUCCEEDED|BUILD FAILED)' || true
+          grep -q 'TEST BUILD SUCCEEDED' build.log
+      - name: UI tests
+        run: |
+          set -o pipefail
+          xcodebuild test-without-building \
+            -project Bourbon.xcodeproj -scheme Bourbon \
+            -destination 'platform=macOS' \
+            -derivedDataPath DerivedData \
+            -resultBundlePath UITests.xcresult
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ui-test-results
+          path: |
+            UITests.xcresult
+            build.log
+          if-no-files-found: ignore

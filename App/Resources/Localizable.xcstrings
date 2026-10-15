@@ -1,0 +1,1656 @@
+{
+  "sourceLanguage": "en",
+  "strings": {
+    "%@ is ready": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ hazır"
+          }
+        }
+      }
+    },
+    "%lld programs": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld program"
+          }
+        }
+      }
+    },
+    "A bottle is a self-contained Windows environment. Create one, then install or drop in any Windows program.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Şişe, kendi içinde bağımsız bir Windows ortamıdır. Bir tane oluşturun, ardından herhangi bir Windows programını kurun ya da sürükleyip bırakın."
+          }
+        }
+      }
+    },
+    "A fresh Windows environment with its own C: drive and settings.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kendi C: sürücüsü ve ayarları olan yepyeni bir Windows ortamı."
+          }
+        }
+      }
+    },
+    "About": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hakkında"
+          }
+        }
+      }
+    },
+    "Add Variable": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Değişken Ekle"
+          }
+        }
+      }
+    },
+    "Advertise AVX to Rosetta": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rosetta'ya AVX desteği bildir"
+          }
+        }
+      }
+    },
+    "Amber": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kehribar"
+          }
+        }
+      }
+    },
+    "Appearance": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Görünüm"
+          }
+        }
+      }
+    },
+    "Applying settings": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ayarlar uygulanıyor"
+          }
+        }
+      }
+    },
+    "Arguments": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Argümanlar"
+          }
+        }
+      }
+    },
+    "Asynchronous shaders": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eşzamansız gölgelendiriciler"
+          }
+        }
+      }
+    },
+    "Bottle": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Şişe"
+          }
+        }
+      }
+    },
+    "Bottle names can be up to %lld characters.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Şişe adları en fazla %lld karakter olabilir."
+          }
+        }
+      }
+    },
+    "Bottle names can't contain “/” or “:”.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Şişe adları “/” veya “:” içeremez."
+          }
+        }
+      }
+    },
+    "Bottles": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Şişeler"
+          }
+        }
+      }
+    },
+    "Bottles folder": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Şişeler klasörü"
+          }
+        }
+      }
+    },
+    "Bourbon is free software under the GNU GPL v3. It is inspired by Whisky by Isaac Marovitz and contributors, and builds on Wine, DXVK, MoltenVK and winetricks.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bourbon, GNU GPL v3 lisanslı özgür bir yazılımdır. Isaac Marovitz ve katkıcılarının geliştirdiği Whisky'den ilham alır; Wine, DXVK, MoltenVK ve winetricks üzerine kuruludur."
+          }
+        }
+      }
+    },
+    "Bourbon uses Wine to translate Windows calls into macOS ones. Use one you already have, or download a fresh build.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bourbon, Windows çağrılarını macOS çağrılarına çevirmek için Wine kullanır. Elinizdekini kullanın ya da yeni bir sürüm indirin."
+          }
+        }
+      }
+    },
+    "Build": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sürüm"
+          }
+        }
+      }
+    },
+    "C: Drive": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "C: Sürücüsü"
+          }
+        }
+      }
+    },
+    "Cancel": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vazgeç"
+          }
+        }
+      }
+    },
+    "Close": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kapat"
+          }
+        }
+      }
+    },
+    "Command copied": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Komut kopyalandı"
+          }
+        }
+      }
+    },
+    "Command Prompt": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Komut İstemi"
+          }
+        }
+      }
+    },
+    "Continue": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Devam"
+          }
+        }
+      }
+    },
+    "Control Panel": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Denetim Masası"
+          }
+        }
+      }
+    },
+    "Copper": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bakır"
+          }
+        }
+      }
+    },
+    "Copy Terminal Command": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terminal Komutunu Kopyala"
+          }
+        }
+      }
+    },
+    "Couldn't unpack Wine. %@": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wine açılamadı. %@"
+          }
+        }
+      }
+    },
+    "Create a bottle, then run any Windows installer or drop a .exe onto it.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bir şişe oluşturun, ardından herhangi bir Windows yükleyicisini çalıştırın ya da üzerine bir .exe bırakın."
+          }
+        }
+      }
+    },
+    "Create Bottle": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Şişe Oluştur"
+          }
+        }
+      }
+    },
+    "Created": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oluşturulma"
+          }
+        }
+      }
+    },
+    "Delete %@?": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ silinsin mi?"
+          }
+        }
+      }
+    },
+    "Delete…": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sil…"
+          }
+        }
+      }
+    },
+    "Devel": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geliştirme"
+          }
+        }
+      }
+    },
+    "Double-click to run": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Çalıştırmak için çift tıklayın"
+          }
+        }
+      }
+    },
+    "Download": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İndir"
+          }
+        }
+      }
+    },
+    "Download Latest": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En Yenisini İndir"
+          }
+        }
+      }
+    },
+    "Download Wine": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wine'ı İndir"
+          }
+        }
+      }
+    },
+    "Downloading and unpacking Wine…": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wine indiriliyor ve açılıyor…"
+          }
+        }
+      }
+    },
+    "Downloading Wine": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wine indiriliyor"
+          }
+        }
+      }
+    },
+    "Drop to run in %@": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ içinde çalıştırmak için bırakın"
+          }
+        }
+      }
+    },
+    "Duplicate": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Çoğalt"
+          }
+        }
+      }
+    },
+    "DXVK": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "DXVK"
+          }
+        }
+      }
+    },
+    "DXVK HUD": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "DXVK HUD"
+          }
+        }
+      }
+    },
+    "DXVK translates Direct3D 9–11 to Vulkan, which MoltenVK runs on Metal.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "DXVK, Direct3D 9–11'i Vulkan'a çevirir; MoltenVK da bunu Metal üzerinde çalıştırır."
+          }
+        }
+      }
+    },
+    "e.g. Steam, Office, Retro Games": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "örn. Steam, Office, Retro Oyunlar"
+          }
+        }
+      }
+    },
+    "Enable DXVK for Direct3D 9–11 games": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Direct3D 9–11 oyunları için DXVK'yi etkinleştir"
+          }
+        }
+      }
+    },
+    "Environment Variables": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ortam Değişkenleri"
+          }
+        }
+      }
+    },
+    "ESync": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ESync"
+          }
+        }
+      }
+    },
+    "File Explorer": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dosya Gezgini"
+          }
+        }
+      }
+    },
+    "FPS": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "FPS"
+          }
+        }
+      }
+    },
+    "Full": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tam"
+          }
+        }
+      }
+    },
+    "General": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Genel"
+          }
+        }
+      }
+    },
+    "Get Started": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Başlayalım"
+          }
+        }
+      }
+    },
+    "Get Wine": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wine'ı Edinin"
+          }
+        }
+      }
+    },
+    "Give your bottle a name.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Şişenize bir ad verin."
+          }
+        }
+      }
+    },
+    "Graphics": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Grafik"
+          }
+        }
+      }
+    },
+    "Graphite": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Grafit"
+          }
+        }
+      }
+    },
+    "Hide from Library": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kitaplıktan Gizle"
+          }
+        }
+      }
+    },
+    "Info": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bilgi"
+          }
+        }
+      }
+    },
+    "Inspector": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Denetçi"
+          }
+        }
+      }
+    },
+    "Install": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kur"
+          }
+        }
+      }
+    },
+    "Install Rosetta": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rosetta'yı Kur"
+          }
+        }
+      }
+    },
+    "Install runtimes, fonts and fixes into %@.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ içine çalışma zamanları, yazı tipleri ve düzeltmeler kurun."
+          }
+        }
+      }
+    },
+    "Installed %@": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ kuruldu"
+          }
+        }
+      }
+    },
+    "Installed runtimes": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kurulu çalışma zamanları"
+          }
+        }
+      }
+    },
+    "Installing %@": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ kuruluyor"
+          }
+        }
+      }
+    },
+    "Language": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dil"
+          }
+        }
+      }
+    },
+    "Last played": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Son oynanma"
+          }
+        }
+      }
+    },
+    "Launch Options…": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Başlatma Seçenekleri…"
+          }
+        }
+      }
+    },
+    "Library": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kitaplık"
+          }
+        }
+      }
+    },
+    "Location": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Konum"
+          }
+        }
+      }
+    },
+    "Log Level": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Günlük Düzeyi"
+          }
+        }
+      }
+    },
+    "Logs folder": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Günlükler klasörü"
+          }
+        }
+      }
+    },
+    "Looking for programs…": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Programlar aranıyor…"
+          }
+        }
+      }
+    },
+    "Metal capture": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Metal yakalama"
+          }
+        }
+      }
+    },
+    "Metal HUD": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Metal HUD"
+          }
+        }
+      }
+    },
+    "Mint": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nane"
+          }
+        }
+      }
+    },
+    "Move to Trash": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Çöp Sepetine Taşı"
+          }
+        }
+      }
+    },
+    "Moved %@ to the Trash": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ Çöp Sepetine taşındı"
+          }
+        }
+      }
+    },
+    "MSync": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "MSync"
+          }
+        }
+      }
+    },
+    "MSync is the fastest option on macOS. AVX helps newer games that refuse to start without it.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "MSync, macOS'taki en hızlı seçenektir. AVX, onsuz açılmayan yeni oyunlara yardımcı olur."
+          }
+        }
+      }
+    },
+    "NAME": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "AD"
+          }
+        }
+      }
+    },
+    "Name": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ad"
+          }
+        }
+      }
+    },
+    "New Bottle": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yeni Şişe"
+          }
+        }
+      }
+    },
+    "New Bottle…": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yeni Şişe…"
+          }
+        }
+      }
+    },
+    "No Matching Programs": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eşleşen Program Yok"
+          }
+        }
+      }
+    },
+    "No programs yet": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Henüz program yok"
+          }
+        }
+      }
+    },
+    "No Wine runtime found yet.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Henüz bir Wine çalışma zamanı bulunamadı."
+          }
+        }
+      }
+    },
+    "Ocean": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Okyanus"
+          }
+        }
+      }
+    },
+    "Off": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kapalı"
+          }
+        }
+      }
+    },
+    "OK": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tamam"
+          }
+        }
+      }
+    },
+    "Open C: Drive": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "C: Sürücüsünü Aç"
+          }
+        }
+      }
+    },
+    "Parsed as": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ayrıştırılmış hali"
+          }
+        }
+      }
+    },
+    "Partial": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kısmi"
+          }
+        }
+      }
+    },
+    "Performance": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Performans"
+          }
+        }
+      }
+    },
+    "Pin": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sabitle"
+          }
+        }
+      }
+    },
+    "Pinned": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sabitlenenler"
+          }
+        }
+      }
+    },
+    "Pour your first bottle": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İlk şişenizi doldurun"
+          }
+        }
+      }
+    },
+    "Quiet": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sessiz"
+          }
+        }
+      }
+    },
+    "Recently Played": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Son Oynananlar"
+          }
+        }
+      }
+    },
+    "Refresh": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yenile"
+          }
+        }
+      }
+    },
+    "Registry Editor": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kayıt Defteri Düzenleyicisi"
+          }
+        }
+      }
+    },
+    "Remove variable": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Değişkeni kaldır"
+          }
+        }
+      }
+    },
+    "Rename": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yeniden Adlandır"
+          }
+        }
+      }
+    },
+    "Rename Bottle": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Şişeyi Yeniden Adlandır"
+          }
+        }
+      }
+    },
+    "Rename…": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yeniden Adlandır…"
+          }
+        }
+      }
+    },
+    "Rescan": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yeniden Tara"
+          }
+        }
+      }
+    },
+    "Retina mode": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Retina modu"
+          }
+        }
+      }
+    },
+    "Rose": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gül"
+          }
+        }
+      }
+    },
+    "Run": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Çalıştır"
+          }
+        }
+      }
+    },
+    "Run an installer with **Run Program…** or drop a .exe here. Installed programs appear automatically.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "**Program Çalıştır…** ile bir yükleyici çalıştırın ya da buraya bir .exe bırakın. Kurulan programlar otomatik olarak görünür."
+          }
+        }
+      }
+    },
+    "Run Program…": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Program Çalıştır…"
+          }
+        }
+      }
+    },
+    "Run Windows apps and games on your Mac. Bourbon keeps each one in its own bottle, tuned and ready to go.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Windows uygulamalarını ve oyunlarını Mac'inizde çalıştırın. Bourbon her birini kendi şişesinde, ayarlı ve kullanıma hazır tutar."
+          }
+        }
+      }
+    },
+    "Run Windows Program…": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Windows Programı Çalıştır…"
+          }
+        }
+      }
+    },
+    "Running": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Çalışıyor"
+          }
+        }
+      }
+    },
+    "Running %@": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ çalıştırılıyor"
+          }
+        }
+      }
+    },
+    "Save": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kaydet"
+          }
+        }
+      }
+    },
+    "Scan the bottle for programs again": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Şişeyi programlar için yeniden tara"
+          }
+        }
+      }
+    },
+    "Search bottles": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Şişelerde ara"
+          }
+        }
+      }
+    },
+    "Search programs": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Programlarda ara"
+          }
+        }
+      }
+    },
+    "Search verbs": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fiillerde ara"
+          }
+        }
+      }
+    },
+    "Set up Wine": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wine'ı kur"
+          }
+        }
+      }
+    },
+    "Setting up %@": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ hazırlanıyor"
+          }
+        }
+      }
+    },
+    "Show": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Göster"
+          }
+        }
+      }
+    },
+    "Show All": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tümünü Göster"
+          }
+        }
+      }
+    },
+    "Show in Finder": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Finder'da Göster"
+          }
+        }
+      }
+    },
+    "Skip for now": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Şimdilik atla"
+          }
+        }
+      }
+    },
+    "Some games only show the right characters when started in their own language.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bazı oyunlar karakterleri ancak kendi dillerinde başlatıldıklarında doğru gösterir."
+          }
+        }
+      }
+    },
+    "Something went wrong": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bir şeyler ters gitti"
+          }
+        }
+      }
+    },
+    "Sort": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sırala"
+          }
+        }
+      }
+    },
+    "Stable": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kararlı"
+          }
+        }
+      }
+    },
+    "Staging": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Staging"
+          }
+        }
+      }
+    },
+    "Standard": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Standart"
+          }
+        }
+      }
+    },
+    "Start Using Bourbon": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bourbon'u Kullanmaya Başla"
+          }
+        }
+      }
+    },
+    "Stop All": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tümünü Durdur"
+          }
+        }
+      }
+    },
+    "Stop All Programs": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tüm Programları Durdur"
+          }
+        }
+      }
+    },
+    "Stopped all programs": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tüm programlar durduruldu"
+          }
+        }
+      }
+    },
+    "Synchronization": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eşitleme"
+          }
+        }
+      }
+    },
+    "System default": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sistem varsayılanı"
+          }
+        }
+      }
+    },
+    "Task Manager": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Görev Yöneticisi"
+          }
+        }
+      }
+    },
+    "The bottle and every program installed in it will be moved to the Trash.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Şişe ve içine kurulan tüm programlar Çöp Sepetine taşınacak."
+          }
+        }
+      }
+    },
+    "The download didn't contain a Wine runtime.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İndirilen dosyada bir Wine çalışma zamanı yoktu."
+          }
+        }
+      }
+    },
+    "The latest release has no %@ build for macOS.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En son sürümde macOS için %@ derlemesi yok."
+          }
+        }
+      }
+    },
+    "Toggle Inspector": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Denetçiyi Aç/Kapat"
+          }
+        }
+      }
+    },
+    "Tools": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Araçlar"
+          }
+        }
+      }
+    },
+    "Try a different search.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Farklı bir arama deneyin."
+          }
+        }
+      }
+    },
+    "Unpin": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sabitlemeyi Kaldır"
+          }
+        }
+      }
+    },
+    "Use": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kullan"
+          }
+        }
+      }
+    },
+    "value": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "değer"
+          }
+        }
+      }
+    },
+    "Verbose": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ayrıntılı"
+          }
+        }
+      }
+    },
+    "Version %@": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sürüm %@"
+          }
+        }
+      }
+    },
+    "Violet": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Menekşe"
+          }
+        }
+      }
+    },
+    "Welcome to Bourbon": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bourbon'a Hoş Geldiniz"
+          }
+        }
+      }
+    },
+    "Windows": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Windows"
+          }
+        }
+      }
+    },
+    "Windows Version": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Windows Sürümü"
+          }
+        }
+      }
+    },
+    "Wine Configuration": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wine Yapılandırması"
+          }
+        }
+      }
+    },
+    "Wine is ready": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wine hazır"
+          }
+        }
+      }
+    },
+    "Wine isn't set up yet, so the bottle will be prepared later.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wine henüz kurulmadı; şişe daha sonra hazırlanacak."
+          }
+        }
+      }
+    },
+    "Wine runs Intel code. Rosetta 2 translates it for Apple silicon. You'll be asked for your password.": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wine, Intel kodu çalıştırır. Rosetta 2 bunu Apple çipleri için çevirir. Parolanız istenecek."
+          }
+        }
+      }
+    },
+    "Winetricks": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Winetricks"
+          }
+        }
+      }
+    },
+    "Winetricks…": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Winetricks…"
+          }
+        }
+      }
+    },
+    "You're all set": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Her şey hazır"
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

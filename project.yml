@@ -1,0 +1,96 @@
+name: Bourbon
+options:
+  bundleIdPrefix: dev.bourbon
+  deploymentTarget:
+    macOS: "14.0"
+  developmentLanguage: en
+  createIntermediateGroups: true
+  groupSortPosition: top
+
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    MARKETING_VERSION: "1.0.0"
+    CURRENT_PROJECT_VERSION: "1"
+    MACOSX_DEPLOYMENT_TARGET: "14.0"
+    CODE_SIGN_IDENTITY: "-"
+    CODE_SIGN_STYLE: Manual
+    DEVELOPMENT_TEAM: ""
+    ENABLE_HARDENED_RUNTIME: NO
+    SWIFT_EMIT_LOC_STRINGS: YES
+    LOCALIZATION_PREFERS_STRING_CATALOGS: YES
+    ENABLE_USER_SCRIPT_SANDBOXING: YES
+    DEAD_CODE_STRIPPING: YES
+
+packages:
+  BourbonKit:
+    path: BourbonKit
+
+targets:
+  Bourbon:
+    type: application
+    platform: macOS
+    sources:
+      - path: App/Sources
+      - path: App/Resources
+    dependencies:
+      - package: BourbonKit
+        product: BourbonKit
+    info:
+      path: App/Info.plist
+      properties:
+        CFBundleName: Bourbon
+        CFBundleDisplayName: Bourbon
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        CFBundleDevelopmentRegion: en
+        CFBundleLocalizations: [en, tr]
+        LSApplicationCategoryType: public.app-category.utilities
+        LSMinimumSystemVersion: $(MACOSX_DEPLOYMENT_TARGET)
+        NSHumanReadableCopyright: "Bourbon is free software, licensed under the GNU GPL v3."
+        CFBundleDocumentTypes:
+          - CFBundleTypeName: Windows Program
+            CFBundleTypeRole: Viewer
+            LSHandlerRank: Alternate
+            LSItemContentTypes: [com.microsoft.windows-executable]
+          - CFBundleTypeName: Windows Installer
+            CFBundleTypeRole: Viewer
+            LSHandlerRank: Alternate
+            CFBundleTypeExtensions: [msi, bat]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: dev.bourbon.app
+        PRODUCT_NAME: Bourbon
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        COMBINE_HIDPI_IMAGES: YES
+
+  BourbonUITests:
+    type: bundle.ui-testing
+    platform: macOS
+    sources:
+      - path: App/UITests
+    dependencies:
+      - target: Bourbon
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: dev.bourbon.uitests
+        TEST_TARGET_NAME: Bourbon
+        GENERATE_INFOPLIST_FILE: YES
+
+schemes:
+  Bourbon:
+    build:
+      targets:
+        Bourbon: all
+        BourbonUITests: [test]
+    run:
+      config: Debug
+    test:
+      config: Debug
+      gatherCoverageData: true
+      coverageTargets: [Bourbon]
+      targets:
+        - name: BourbonUITests
+    archive:
+      config: Release
