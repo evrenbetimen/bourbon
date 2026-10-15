@@ -114,6 +114,28 @@ final class BourbonUITests: XCTestCase {
                       "An open panel should appear")
         app.typeKey(.escape, modifierFlags: [])
     }
+
+    func testFilePickerAcceptsWindowsPrograms() {
+        launch()
+        element("bottleRow-Steam").click()
+        let run = element("runProgramButton")
+        XCTAssertTrue(run.waitForExistence(timeout: 5))
+        run.click()
+        let panel = app.sheets.firstMatch
+        XCTAssertTrue(panel.waitForExistence(timeout: 10), "An open panel should appear")
+
+        // Go straight to the installer the seed put in /tmp; an upper-case .EXE is the hardest case.
+        app.typeKey("g", modifierFlags: [.command, .shift])
+        app.typeText("/tmp/BourbonUITestFiles/SETUP.EXE\r")
+
+        let open = panel.buttons["Open"]
+        XCTAssertTrue(open.waitForExistence(timeout: 5))
+        let enabled = NSPredicate(format: "isEnabled == true")
+        let selectable = expectation(for: enabled, evaluatedWith: open)
+        wait(for: [selectable], timeout: 10)
+        open.click()
+        XCTAssertTrue(panel.waitForNonExistence(timeout: 10), "Choosing the program should close the panel")
+    }
 }
 
 final class OnboardingUITests: XCTestCase {

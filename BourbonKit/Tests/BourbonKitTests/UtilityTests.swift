@@ -127,3 +127,17 @@ final class LibraryQueryTests: XCTestCase {
         XCTAssertEqual(LibraryQuery.filter(bottles, text: " ").count, 3)
     }
 }
+
+final class RunnableFileTests: XCTestCase {
+    func testAcceptsWindowsProgramsInstallersAndScripts() {
+        for name in ["setup.exe", "SETUP.EXE", "Installer.Msi", "run.bat"] {
+            XCTAssertTrue(RunnableFile.isRunnable(URL(fileURLWithPath: "/tmp/\(name)")), name)
+        }
+    }
+
+    func testRejectsOtherFilesAndRemoteURLs() {
+        XCTAssertFalse(RunnableFile.isRunnable(URL(fileURLWithPath: "/tmp/readme.txt")))
+        XCTAssertFalse(RunnableFile.isRunnable(URL(fileURLWithPath: "/tmp/exe")))
+        XCTAssertFalse(RunnableFile.isRunnable(URL(string: "https://example.com/setup.exe")!))
+    }
+}

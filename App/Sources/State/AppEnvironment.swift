@@ -67,7 +67,11 @@ enum UITestSeed {
         try touch(steam.driveC.appendingPathComponent("Program Files/Hollow Lands/HollowLands.exe"))
         try touch(steam.driveC.appendingPathComponent("Program Files/Hollow Lands/unins000.exe"))
         try touch(office.driveC.appendingPathComponent("Program Files/Notepad++/notepad++.exe"))
+        try touch(downloadedInstaller)
     }
+
+    /// An installer outside any bottle, at a fixed path the UI tests can type into the open panel.
+    static let downloadedInstaller = URL(fileURLWithPath: "/tmp/BourbonUITestFiles/SETUP.EXE")
 
     private static func touch(_ url: URL) throws {
         try FileManager.default.createDirectory(at: url.deletingLastPathComponent(), withIntermediateDirectories: true)

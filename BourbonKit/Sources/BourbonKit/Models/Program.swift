@@ -28,3 +28,14 @@ public struct Program: Identifiable, Hashable, Sendable {
         url.deletingLastPathComponent()
     }
 }
+
+/// The Windows files Bourbon can open: programs, installers and batch scripts.
+public enum RunnableFile {
+    /// Lowercase extensions, in the order the file picker lists them.
+    public static let extensions = ["exe", "msi", "bat"]
+
+    /// Whether `url` names a file Bourbon can hand to Wine. The check ignores case, so `SETUP.EXE` counts.
+    public static func isRunnable(_ url: URL) -> Bool {
+        url.isFileURL && extensions.contains(url.pathExtension.lowercased())
+    }
+}
